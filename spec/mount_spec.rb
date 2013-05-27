@@ -242,7 +242,7 @@ describe CarrierWave::Mount do
 
       it "should be the cache name when a file has been cached" do
         @instance.image = stub_file('test.jpg')
-        @instance.image_cache.should =~ %r(^[\d]{8}\-[\d]{4}\-[\d]+\-[\d]{4}/test\.jpg$)
+        @instance.image_cache.should =~ %r(^[\d]{8}\-[\d]{4}\-[\d]+\-[\d]{1,6}/test\.jpg$)
       end
 
     end
